@@ -18,57 +18,58 @@ A personal learning repository containing case study examples of To-Do List appl
 
 ## Usage
 
-- **Manual Setup**
-    1. Start the MySQL server and open your database client.
-    2. Create a new database (e.g. `belajar_php`).
-    3. Execute the SQL files at `database/migrations/` to create the database tables.
-    4. Configure the MySQL connection parameters (`$database`, `$username`, and `$password`) in `Config/Database.php`:
+### Manual Setup
 
-        ```php
-        public static function getConnection(): PDO
-        {
-            $host = 'db';
-            $port = '3306';
-            $database = 'belajar_php';
-            $username = '<username>';
-            $password = '<yourpassword>';
+1. Start the MySQL server and open your database client.
+2. Create a new database (e.g. `belajar_php`).
+3. Execute the SQL files at `database/migrations/` to create the database tables.
+4. Configure the MySQL connection parameters (`$database`, `$username`, and `$password`) in `Config/Database.php`:
 
-            return new PDO("mysql:host=$host:$port;dbname=$database", $username, $password);
-        }
-        ```
+    ```php
+    public static function getConnection(): PDO
+    {
+        $host = 'db';
+        $port = '3306';
+        $database = 'belajar_php';
+        $username = '<username>';
+        $password = '<yourpassword>';
 
-    5. Run the application from the project directory:
+        return new PDO("mysql:host=$host:$port;dbname=$database", $username, $password);
+    }
+    ```
 
-        ```bash
-         php App.php
-        ```
+5. Run the application from the project directory:
 
-- **Using Docker**
-    1. Start the Docker containers from the project directory:
+    ```bash
+     php App.php
+    ```
 
-        ```bash
-        docker compose up -d
-        ```
+### Using Docker
+1. Start the Docker containers from the project directory:
 
-    2. Open your database client and connect to the MySQL container using the following credentials (password is empty):
+    ```bash
+    docker compose up -d
+    ```
 
-        ```bash
-        Host: 127.0.0.1
-        Port: 3306
-        Username: root
-        Password:
-        ```
+2. Open your database client and connect to the MySQL container using the following credentials (password is empty):
 
-    3. Create a new database (e.g. `belajar_php`)
-    4. Execute the SQL files at `database/migrations/` to create the database tables
-    5. Open a terminal inside the web container:
+    ```bash
+    Host: 127.0.0.1
+    Port: 3306
+    Username: root
+    Password:
+    ```
 
-        ```bash
-        docker compose exec web bash
-        ```
+3. Create a new database (e.g. `belajar_php`)
+4. Execute the SQL files at `database/migrations/` to create the database tables
+5. Open a terminal inside the web container:
 
-    6. Run the application:
+    ```bash
+    docker compose exec web bash
+    ```
 
-        ```bash
-        php App.php
-        ```
+6. Run the application:
+
+    ```bash
+    php App.php
+    ```
